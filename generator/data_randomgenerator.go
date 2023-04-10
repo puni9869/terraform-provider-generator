@@ -25,7 +25,6 @@ func dataSourceRead(ctx context.Context, d *schema.ResourceData, m interface{}) 
 	// Warning or errors can be collected in a slice type
 	var diags diag.Diagnostics
 	count := d.Get("number").(string)
-	fmt.Println("[DEBUG] found resource by guid")
 	if err := d.Set("number", count); err != nil {
 		fmt.Println("[DEBUG] error in data source")
 		diag.Errorf("error in getting number. %s", err)
