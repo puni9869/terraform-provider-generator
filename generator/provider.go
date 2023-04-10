@@ -10,5 +10,9 @@ func Provider() *schema.Provider {
 		ResourcesMap: map[string]*schema.Resource{
 			"generator": resourceRandomGenerator(),
 		},
+
+		DataSourcesMap: map[string]*schema.Resource{
+			"generator": dataSourceRandomGenerator(),
+		},
 	}
 }

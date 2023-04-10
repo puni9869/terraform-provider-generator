@@ -13,3 +13,11 @@ provider "generator" {}
 resource "generator" "random" {
   number = "10"
 }
+
+data "generator" "random" {
+  number = "10"
+}
+
+output "val" {
+  value = data.generator.random
+}

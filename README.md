@@ -18,7 +18,7 @@ Then, run the following command to initialize the workspace and apply the sample
 
 ```shell
 export TF_LOG=VERBOSE
-cd examples && terraform init && terraform apply
+cd terraform && terraform init && terraform apply
 ```
 
 [More](https://developer.hashicorp.com/terraform/plugin)
