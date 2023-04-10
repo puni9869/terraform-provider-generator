@@ -3,7 +3,7 @@
 Run the following command to build the provider
 
 ```shell
-go build -o terraform-provider-cause
+go build -o terraform-provider-generator
 ```
 
 ## Test sample configuration
