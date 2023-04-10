@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    cause = {
+    generator = {
       version = "1.0"
       source  = "github.com/puni9869/generator"
     }
