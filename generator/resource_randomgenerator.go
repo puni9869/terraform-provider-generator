@@ -2,7 +2,6 @@ package generator
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -30,19 +29,20 @@ func randomgeneratorCreate(ctx context.Context, d *schema.ResourceData, m interf
 	// Warning or errors can be collected in a slice type
 	var diags diag.Diagnostics
 	count := d.Get("number").(string)
-	d.SetId(count)
+
 	// https://www.uuidtools.com/api/generate/v1/count/uuid_count
 	resp, err := http.Get("https://www.uuidtools.com/api/generate/v1/count/" + count)
 	if err != nil {
 		log.Fatal(err)
+		return diags
 	}
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		log.Printf("[ERROR] %s: randomgeneratorCreate filed", err)
+		return diags
 	}
+	d.SetId(string(body))
 	defer resp.Body.Close()
-	log.Printf("[ERROR] %s: randomgeneratorCreate successfully", err)
-	fmt.Println(string(body))
 	return diags
 }
 
