@@ -43,6 +43,8 @@ func randomgeneratorCreate(ctx context.Context, d *schema.ResourceData, m interf
 	}
 	d.SetId(string(body))
 	defer resp.Body.Close()
+
+	d.SetId(string(body))
 	return diags
 }
 
