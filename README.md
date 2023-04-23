@@ -2,7 +2,7 @@
 1. HCL (HashiCorp Configuration Language)
 2. Terraform basic level understanding.
 3. Modules in Terraform.
-4. Golang (Optional)
+4. Golang
 
 # What is terraform?
 Terraform is an infrastructure as code tool that lets you build, change, and version cloud and on-prem resources safely and efficiently.
